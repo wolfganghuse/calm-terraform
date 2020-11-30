@@ -31,7 +31,8 @@ stages:
     - task: Docker@2
       displayName: Push image
       inputs:
-        containerRegistry: $(dockerRegistryServiceConnection)
+        containerRegistry: wolfganghuse-dockerhub
+        #containerRegistry: $(dockerRegistryServiceConnection)
         repository: wolfganghuse/calm-dsl
         command: push
         tags: |
