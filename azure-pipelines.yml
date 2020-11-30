@@ -5,7 +5,7 @@
 name: 0.1.$(Rev:r)
 
 variables:
-  - group: theale-prism-central
+  - group: hpoc-prism-central
 
 trigger:
   - master
@@ -22,7 +22,7 @@ stages:
     - task: Docker@2
       displayName: Build image
       inputs:
-        repository: ukdemo/calm-dsl
+        repository: wolfganghuse/calm-dsl
         command: build
         # arguments: '--no-cache'
         tags: |
@@ -32,7 +32,7 @@ stages:
       displayName: Push image
       inputs:
         containerRegistry: $(dockerRegistryServiceConnection)
-        repository: ukdemo/calm-dsl
+        repository: wolfganghuse/calm-dsl
         command: push
         tags: |
           latest
@@ -44,7 +44,7 @@ stages:
   - deployment: DeployCalm
     displayName: 'Deploy to Calm'
     container:
-      image: ukdemo/calm-dsl:latest
+      image: wolfganghuse/calm-dsl:latest
     environment: 'dev'
     strategy:
       runOnce:
