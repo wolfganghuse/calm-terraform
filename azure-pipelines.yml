@@ -10,7 +10,7 @@ variables:
 trigger:
   - master
 
-pool: 'default'
+pool: 'calm-terraform-default'
 
 stages:
 - stage: Build
