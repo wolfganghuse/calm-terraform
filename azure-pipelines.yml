@@ -29,16 +29,13 @@ stages:
           latest
           $(Build.BuildId)
     - task: Docker@2
-      displayName: Push image
       inputs:
-        containerRegistry: wolfganghuse-dockerhub
-        #containerRegistry: $(dockerRegistryServiceConnection)
-        repository: wolfganghuse/calm-dsl
-        command: push
+        containerRegistry: 'wolfganghuse-dockerhub'
+        repository: 'wolfganghuse/calm-dsl'
+        command: 'push'
         tags: |
           latest
           $(Build.BuildId)             
-
       
 - stage: Deploy
   jobs:
