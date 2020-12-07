@@ -8,7 +8,7 @@ variables:
   - group: hpoc-prism-central
 
 trigger:
-  - main
+  - master
 
 pool: 'default'
 
