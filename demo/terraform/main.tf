@@ -2,7 +2,7 @@
 terraform {
   backend "s3" {
     bucket = "terraform"
-    endpoint = "http://10.42.108.50"
+    endpoint = "http://10.200.100.231"
     key = "demo/terraform.tfstate"
     region = "us-east-1"
     profile = "objects"
